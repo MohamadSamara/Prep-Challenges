@@ -69,17 +69,24 @@ const LastWord_2 = (str) => {
 //
 
 const replaceWords = (str) => {
-    // write your code here
-    const replacements = [
-        { search: 'I', replace: 'We' },
-        { search: 'am', replace: 'are' },
-        { search: 'was', replace: 'were' }
-    ];
-    replacements.forEach(replacement => {
-        str = str.replace(replacement.search, replacement.replace);
-    });
-
-    return str;
+      // write your code here
+      let s = str.split(" ");
+      let z= [];
+      for(let i = 0 ; i<s.length ; i++){
+          if(s[i] =="I"){
+              z.splice(i,1,"We")
+          }
+          else if(s[i] =="am"){
+              z.splice(i,1,"are")
+          }
+          else if(s[i] =="was"){
+              z.splice(i,1,"were")
+          }
+          else{
+              z.push(s[i])    
+          } 
+      }
+      return z.join(" ");
 }
 // -------------------------------------------------------------------------------------------------------
 
